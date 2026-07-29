@@ -1,4 +1,4 @@
-import BodyContainer from "./components/BodyContainer";
+import BodyContainer from "./components/routes/BodyContainer";
 import "./style/style.css"
 import { Provider } from "react-redux";
 import store from "./utils/store"

@@ -1,37 +1,30 @@
-import { useSelector } from "react-redux";
 import useFetchTrailerBgVideo from "../../hooks/useFetchTrailerBgVideo";
-
+import bgtrailer from "../../assets/bgtrailerOdyssey.mp4";
+import { useRef } from "react";
 const BackGroundVideo = (movieId) => {
-  const selector = useSelector((store) => store.NPmovies.trailerVideo);
   useFetchTrailerBgVideo(movieId);
+  const videoRef = useRef();
+  const handleLoadedMetadata = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 35; 
+      videoRef.current.play(); 
+    }
+  };
+
   return (
-    <div className="w-screen aspect-video z-10">
-      <iframe
-        className="w-screen aspect-video"
-        src={
-          "https://www.youtube.com/embed/" +
-          selector?.key +
-          "?&autoplay=1&mute=1&start=35"
-        }
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-      ></iframe>
-    </div>
+    <>
+      <video
+        className="w-screen  aspect-video   "
+        ref={videoRef}
+        src={bgtrailer}
+        autoPlay
+        loop
+        muted
+        playsInline
+        onLoadedMetadata={handleLoadedMetadata}
+        onContextMenu={(e) => e.preventDefault()}
+      />
+    </>
   );
 };
-
 export default BackGroundVideo;
-
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/AyIZ9tiiN8I?si=ZOZRduu_TdHrfyLV&amp&start=36"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerpolicy="strict-origin-when-cross-origin"
-  allowfullscreen
-></iframe>;

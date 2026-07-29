@@ -1,10 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS } from "../../constants";
 import { addTopRatedMovies } from "../utils/movieSlicer";
 import { useEffect } from "react";
 
 const useFetchTopRated = () => {
   const disptach = useDispatch();
+  const topRatedMovies = useSelector((store) => store.NPmovies.topRatedMovies);
   const fetchTopRatedMovies = async () => {
     // console.log("trailer api called")
     const response = await fetch(
@@ -18,7 +19,8 @@ const useFetchTopRated = () => {
   };
 
   useEffect(() => {
-    fetchTopRatedMovies();
+    !topRatedMovies && fetchTopRatedMovies();
+    console.log("toprated movies called");
   }, []);
 };
 

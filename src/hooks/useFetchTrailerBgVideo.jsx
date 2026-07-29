@@ -1,12 +1,13 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS } from "../../constants";
 import { addTrailerInfo } from "../utils/movieSlicer";
 import { useEffect } from "react";
 
 const useFetchTrailerBgVideo = ({ movieId }) => {
   const disptach = useDispatch();
+  const bgTrailer = useSelector((store) => store.NPmovies.trailerVideo);
   const fetchBgMovieTrailer = async () => {
-    // console.log("trailer api called")
+    console.log("trailer api called");
     const response = await fetch(
       "https://api.themoviedb.org/3/movie/" +
         movieId +
@@ -20,12 +21,14 @@ const useFetchTrailerBgVideo = ({ movieId }) => {
       (video) => video.type === "Trailer",
     );
     const bgTrailer = filterTrailersOnly[0] || data[0];
-    console.log(bgTrailer);
     disptach(addTrailerInfo(bgTrailer));
   };
 
   useEffect(() => {
-    fetchBgMovieTrailer();
+    if (!bgTrailer) {
+        console.log("BgMovieTrailer called")
+      fetchBgMovieTrailer();
+    }
   }, []);
 };
 
