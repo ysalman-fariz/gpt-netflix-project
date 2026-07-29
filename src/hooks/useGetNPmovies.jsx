@@ -15,7 +15,7 @@ const useGetNPmovies = () => {
     )
       .then((res) => res.json())
       .then((res) => {
-          console.log("Npmovies")
+       
         dispatcherForMovies(addToNowPlayMovies(res.results));
       })
       .catch((err) => console.error(err));
@@ -24,7 +24,7 @@ const useGetNPmovies = () => {
   useEffect(() => {
    
      !nowPlayingMovies && getNowPlayingMoviesList();
-      console.log("getNowPlayingMoviesList called")
+     
     
   }, []);
 };

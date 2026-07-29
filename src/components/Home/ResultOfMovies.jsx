@@ -7,8 +7,7 @@ const ResultOfMovies = () => {
   );
   if (!movieNames) return null;
 
-  // console.log(movieNames );
-  // console.log(resOfMovieSuggestions);
+  
   return (
     <div className="p-4 m-4 bg-black absolute top-1/3 ">
       <h1>Movie Names Found: {movieNames}</h1>

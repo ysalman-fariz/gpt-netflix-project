@@ -18,7 +18,7 @@ const useFetchPopularMovies = () => {
   };
   useEffect(() => {
     !popularMovies && fetchPopularMovies();
-    console.log("popular movies called");
+   
   }, []);
 };
 
