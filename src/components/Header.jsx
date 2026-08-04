@@ -77,31 +77,3 @@ const Header = ({ isBrowse = false }) => {
 };
 
 export default Header;
-{
-  /* <header className="fixed  top-6 left-8 right-4 pr-0 flex justify-between  items-center z-10">
-      <img src={LOGO} alt="Logo" className="w-40 h-auto" />
-
-      {isBrowse && (
-        <div className="flex items-center gap-4">
-          <button
-            className="px-5 py-3 bg-gray-500 rounded-2xl cursor-pointer"
-            onClick={handleToggleGptSearch}
-          >
-            {" "}
-            AI Search
-          </button>
-          <button
-            onClick={handleSignOut}
-            className="bg-red-600 text-white px-4 py-2 rounded"
-          >
-            Sign Out
-          </button>
-          <img
-            src={USER_ICON}
-            alt="User"
-            className="w-10 h-10 mr-2 rounded-full"
-          />
-        </div>
-      )}
-    </header> */
-}

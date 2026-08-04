@@ -14,10 +14,3 @@ const ListOfMovies = () => {
 };
 
 export default ListOfMovies;
-//  <div className="border-4 border-amber-200 ">
-//         <MoviesList
-//           title={"Trending Movies"}
-//           movies={movies.nowPlayingMovies}
-//         />
-//          <MoviesList title={"Top Rated"} movies={movies.topRatedMovies} />
-//       </div>

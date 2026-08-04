@@ -14,6 +14,4 @@ const MovieCard = ({ poster_path }) => {
 };
 
 export default MovieCard;
-// <div className="flex w-60 border-4 border-red-200 ">
-//     <img src={POSTER_PATH_CDN_URL + poster_path} alt="posterImage" />
-//   </div>
+

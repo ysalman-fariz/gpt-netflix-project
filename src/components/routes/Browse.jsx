@@ -24,7 +24,7 @@ const Browse = () => {
       ) : (
         <>
           <HeroTrailerContainer />
-          {/* Pull movie lists over video using negative margin (-mt-48 or -mt-60) */}
+        
           <div className="-mt-48 md:-mt-60 relative z-20 pl-4 md:pl-12">
             <ListOfMovies />
           </div>
@@ -37,22 +37,3 @@ const Browse = () => {
 
 export default Browse;
 
-//  <div
-//       id="root-2"
-//       className="bg-white text-white font-sans"
-//     >
-//       <Header isBrowse />
-//       {gptSearchToggler ? (
-//         <GptSearch />
-//       ) : (
-//         <>
-//           <HeroTrailerContainer />
-
-//           <div className=" relative mb-auto">
-//             <div className="absolute -top-80 p-4">
-//               <ListOfMovies />
-//             </div>
-//           </div>
-//         </>
-//       )}
-//     </div>

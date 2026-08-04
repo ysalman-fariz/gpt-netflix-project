@@ -6,15 +6,15 @@ const BackGroundVideo = (movieId) => {
   const videoRef = useRef();
   const handleLoadedMetadata = () => {
     if (videoRef.current) {
-      videoRef.current.currentTime = 35; 
-      videoRef.current.play(); 
+      videoRef.current.currentTime = 35;
+      videoRef.current.play();
     }
   };
 
   return (
     <>
       <video
-        className="w-screen  aspect-video   "
+        className="w-screen  aspect-video"
         ref={videoRef}
         src={bgtrailer}
         autoPlay

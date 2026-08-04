@@ -9,7 +9,6 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../../utils/firebaseConfig";
-
 import { useDispatch } from "react-redux";
 import { addUser } from "../../utils/userSlice";
 import { USER_ICON } from "../../../constants";
