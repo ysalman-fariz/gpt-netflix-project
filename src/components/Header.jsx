@@ -4,12 +4,14 @@ import { auth } from "../utils/firebaseConfig";
 import { signOut } from "firebase/auth";
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { USER_ICON } from "../../constants";
 import { toggleTheGptSearchFEAT } from "../utils/gptToggleSlice";
 
 const Header = ({ isBrowse = false }) => {
+  const showAibtn = useSelector((store) => store.AiGpt.showGptSearch);
+  console.log(showAibtn)
   const dispatcher = useDispatch();
   const navigator = useNavigate();
 
@@ -48,7 +50,7 @@ const Header = ({ isBrowse = false }) => {
 
   return (
     // Header.jsx
-    <header className="fixed top-0 left-0 right-0 p-4 md:px-12 flex justify-between items-center z-50 bg-gradient-to-b from-black/80 to-transparent">
+    <header className="fixed top-0 left-0 right-0 p-4 md:px-12 flex justify-between items-center z-50">
       <img src={LOGO} alt="Logo" className="w-28 md:w-40 h-auto" />
 
       {isBrowse && (
@@ -57,7 +59,7 @@ const Header = ({ isBrowse = false }) => {
             onClick={handleToggleGptSearch}
             className="px-3 py-1.5 md:px-5 md:py-2 text-xs md:text-base bg-purple-600 text-white rounded-lg"
           >
-            AI Search
+            {showAibtn ? "Go to Home" : "Ai Search"}
           </button>
           <button
             onClick={handleSignOut}

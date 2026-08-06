@@ -9,6 +9,8 @@ const HeroTrailerContainer = () => {
   const firstMovie = movieData[1];
   const { id, original_title, overview } = firstMovie;
 
+
+
   return (
     <div className="relative pt-[20%]  bg-black md:pt-0">
       <MoviesDescription original_title={original_title} overview={overview} />

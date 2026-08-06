@@ -1,7 +1,10 @@
 import useFetchTrailerBgVideo from "../../hooks/useFetchTrailerBgVideo";
 import bgtrailer from "../../assets/bgtrailerOdyssey.mp4";
 import { useRef } from "react";
+import { useSelector } from "react-redux";
 const BackGroundVideo = (movieId) => {
+  const selecter = useSelector((store) => store.NPmovies.trailerVideo);
+
   useFetchTrailerBgVideo(movieId);
   const videoRef = useRef();
   const handleLoadedMetadata = () => {
@@ -11,10 +14,12 @@ const BackGroundVideo = (movieId) => {
     }
   };
 
+ 
   return (
     <>
       <video
-        className="w-screen  aspect-video"
+      
+        className="w-screen  aspect-video "
         ref={videoRef}
         src={bgtrailer}
         autoPlay

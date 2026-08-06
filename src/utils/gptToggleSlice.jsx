@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const gptToggleSlice = createSlice({
    name:"AiGpt",
    initialState:{
-      showGptSearch:false,
+      showGptSearch:true,
       resOfMovieSuggestions:null,
       movieNames:null
    },
